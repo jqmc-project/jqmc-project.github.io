@@ -1,13 +1,17 @@
-# Supercomputers on which jQMC has been run: name, operating institution, country.
+# Supercomputers on which jQMC has been run: name, processors, operating institution, country.
 - name: Fugaku
+  hardware: Fujitsu A64FX CPU
   operator: RIKEN Center for Computational Science
   country: Japan
 - name: Miyabi
+  hardware: Intel Xeon CPU Max 9480 CPU, NVIDIA GH200 (Grace CPU + H100 GPU)
   operator: JCAHPC (University of Tsukuba and The University of Tokyo)
   country: Japan
 - name: Genkai
+  hardware: Intel Xeon Platinum 8490H CPU, NVIDIA H100 GPU
   operator: Research Institute for Information Technology, Kyushu University
   country: Japan
 - name: Leonardo
+  hardware: Intel Xeon Platinum 8480+ CPU, NVIDIA A100 GPU
   operator: CINECA
   country: Italy

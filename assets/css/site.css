@@ -84,6 +84,7 @@ figure.logo img{display:block; width:100%; max-width:100%; height:auto}
 .hpc li{display:grid; gap:4px; align-content:start; border-top:2px solid var(--ink); padding-top:12px; min-width:0}
 .hpc b{font:700 1.35rem/1.2 var(--f-display)}
 .hpc span{color:var(--muted); font-size:.92rem}
+.hpc .spec{color:var(--ink); font-size:.95rem}
 
 /* applications */
 .apps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px}

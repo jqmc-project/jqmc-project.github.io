@@ -77,7 +77,7 @@ layout: default
   </div>
   <ul class="hpc">
   {%- for m in site.data.supercomputers %}
-    <li><b>{{ m.name }}</b> <span>{{ m.operator }}, {{ m.country }}</span></li>
+    <li><div><b>{{ m.name }}</b> <span class="spec">({{ m.hardware }})</span></div> <span>{{ m.operator }}, {{ m.country }}</span></li>
   {%- endfor %}
   </ul>
 </div></section>
