@@ -1,0 +1,11 @@
+# Method papers to cite when using jQMC (same list as the jQMC documentation's citation page).
+- year: 2026
+  title: "jQMC: A JAX-based ab initio quantum Monte Carlo package designed for GPU-accelerated computing"
+  authors: K. Nakano and M. Casula
+  venue: arXiv:2607.13781
+  url: https://arxiv.org/abs/2607.13781
+- year: 2025
+  title: Load-balanced diffusion Monte Carlo method with lattice regularization
+  authors: K. Nakano, S. Sorella and M. Casula
+  venue: J. Chem. Phys. 163, 194117
+  url: https://doi.org/10.1063/5.0296986

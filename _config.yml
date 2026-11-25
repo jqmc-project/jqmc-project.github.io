@@ -1,0 +1,5 @@
+title: jQMC project
+description: Open-source ab initio quantum Monte Carlo for molecules and solids, on CPUs and GPUs.
+url: https://jqmc-project.github.io
+exclude:
+  - README.md

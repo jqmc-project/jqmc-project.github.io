@@ -1,0 +1,136 @@
+---
+layout: default
+---
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#top">jQMC <span>project</span></a>
+  <ul>
+    <li><a href="#software">Software</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#applications">Possible applications</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="https://github.com/jqmc-project">GitHub</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <h1>Quantum Monte Carlo for molecules and solids, <em>on CPUs and GPUs</em>.</h1>
+    <p class="lead">jQMC runs variational Monte Carlo (VMC) and lattice-regularized diffusion Monte Carlo (LRDMC) for open-boundary and periodic systems. Rust kernels drive CPUs, JAX drives GPUs, and the same input runs from a laptop to a multi-GPU supercomputer.</p>
+    <div class="install"><code id="pipcmd">pip install jqmc==0.3.0a1</code><button type="button" id="copy">Copy</button></div>
+    <div class="ctas">
+      <a class="btn primary" href="https://jqmc-project.github.io/jQMC/">Read the documentation</a>
+      <a class="btn ghost" href="https://github.com/jqmc-project/jQMC">View on GitHub</a>
+    </div>
+  </div>
+  <figure class="logo"><img alt="jQMC, ab initio quantum Monte Carlo" src="/assets/img/jqmc-logo.jpg" width="1100" height="368"></figure>
+</div></header>
+
+<section id="software"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Software</span>
+    <h2>From a mean-field wave function to a reproducible QMC result</h2>
+    <p class="lead">Start from a DFT or Hartree–Fock calculation, optimize and project the wave function with jQMC, and let AiiDA keep every step, input and restart on record.</p>
+  </div>
+  <div class="stack">
+    <div class="side">
+      <span class="label">Start from</span>
+      <div class="chip">TREXIO<small>PySCF, CP2K and more</small></div>
+      <div class="chip">Quantum ESPRESSO<small>plane-wave orbitals</small></div>
+    </div>
+    <div class="layers">
+      <div class="layer"><span class="tag">Workflows</span><h3><a href="https://jqmc-project.github.io/aiida-jQMC/">aiida-jQMC</a></h3><p>AiiDA plugin: every jQMC run becomes a calculation with full provenance, checkpoint restarts and structured output.</p></div>
+      <div class="layer core"><span class="tag">QMC engine</span><h3><a href="https://jqmc-project.github.io/jQMC/">jQMC</a></h3><p>VMC with stochastic reconfiguration and LRDMC for Jastrow–Slater and Jastrow-AGP wave functions.</p></div>
+      <div class="hw">
+        <div class="layer"><h3>CPU</h3><p>Rust kernels, MPI</p></div>
+        <div class="layer gpu"><h3>GPU</h3><p>JAX (XLA), MPI + JAX sharding</p></div>
+      </div>
+    </div>
+    <div class="side">
+      <span class="label">You get</span>
+      <div class="chip">Energies<small>VMC and LRDMC, with error bars</small></div>
+      <div class="chip">Forces, pressure, stress<small>analytic derivatives</small></div>
+      <div class="chip">Provenance graph<small>every input and restart</small></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="capabilities"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Capabilities</span>
+    <h2>What jQMC does</h2>
+  </div>
+  <div class="caps">
+    <div class="cap"><h3>VMC &amp; LRDMC</h3><p>Variational Monte Carlo and lattice-regularized diffusion Monte Carlo, with load-balanced LRDMC for many walkers.</p></div>
+    <div class="cap"><h3>Molecules &amp; solids</h3><p>Open-boundary and periodic systems, including complex Bloch wave functions and twist averaging.</p></div>
+    <div class="cap"><h3>Forces, pressure, stress</h3><p>Analytic derivatives for wave-function optimization, atomic forces, pressure and stress.</p></div>
+    <div class="cap"><h3>JSD &amp; JAGP</h3><p>Jastrow–Slater and Jastrow antisymmetrized-geminal-power wave functions, optimized by stochastic reconfiguration, nodal surfaces included.</p></div>
+    <div class="cap"><h3>Interoperable input</h3><p>Trial wave functions from TREXIO (PySCF, CP2K and more) and from Quantum ESPRESSO, converted with one command.</p></div>
+    <div class="cap"><h3>Runs on CPU &amp; GPU</h3><p>Rust on CPUs, JAX on GPUs. Portable from a laptop to multi-GPU supercomputers with MPI and JAX sharding.</p></div>
+  </div>
+</div></section>
+
+<section id="applications"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Possible applications</span>
+    <h2>Built for problems where mean-field theory is not enough</h2>
+    <p class="lead">The periodic features of jQMC target systems like these, where density functionals disagree and a many-body reference is needed. Drag to rotate.</p>
+  </div>
+  <div class="apps">
+    <article class="app">
+      <div class="viewer" id="v-hydrogen"></div>
+      <div class="body">
+        <h3>Dense hydrogen</h3>
+        <span class="meta">I4<sub>1</sub>/amd atomic phase · r<sub>s</sub> &asymp; 1.23 bohr · ~500 GPa</span>
+        <p>Phase boundaries of hydrogen at megabar pressures hinge on energy differences of a few meV per atom.</p>
+        <ul><li>periodic LRDMC with twist averaging</li><li>pressure from the stress tensor</li></ul>
+      </div>
+    </article>
+    <article class="app">
+      <div class="viewer" id="v-hbn"></div>
+      <div class="body">
+        <h3>Layered 2D materials</h3>
+        <span class="meta">h-BN, AA&prime; stacking · a = 2.504 &Aring;, c = 6.66 &Aring;</span>
+        <p>Interlayer binding comes from van der Waals forces, which semilocal functionals miss and dispersion corrections only approximate.</p>
+        <ul><li>binding curves from LRDMC energies</li><li>JAGP wave functions for correlation</li></ul>
+      </div>
+    </article>
+    <article class="app">
+      <div class="viewer" id="v-iron"></div>
+      <div class="body">
+        <h3>Iron under pressure</h3>
+        <span class="meta">hcp &epsilon;-Fe · a = 2.40 &Aring;, c/a = 1.60</span>
+        <p>Iron takes the hcp structure above about 13 GPa and is thought to make up most of Earth's inner core.</p>
+        <ul><li>complex Bloch wave functions</li><li>stress for the equation of state</li></ul>
+      </div>
+    </article>
+  </div>
+  <p class="note">Structures generated with ASE for illustration; they are not jQMC results. Calculations on these systems will appear under Research highlights.</p>
+</div></section>
+
+<section id="publications"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Publications</span>
+    <h2>Method papers</h2>
+    <p class="lead">If you use jQMC in your research, please cite these articles.</p>
+  </div>
+  <ol class="papers">
+  {%- for p in site.data.method_papers %}
+    <li><span class="yr">{{ p.year }}</span><div><a class="t" href="{{ p.url }}">{{ p.title }}</a><div class="a">{{ p.authors }}, {{ p.venue }}</div></div></li>
+  {%- endfor %}
+  </ol>
+  <div class="upcoming">
+    <div><b>Research highlights</b><p>TBD</p></div>
+    <div><b>Papers using jQMC</b><p>TBD</p></div>
+    <div><b>Schools &amp; events</b><p>TBD</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>jQMC project · open-source ab initio quantum Monte Carlo</span>
+  <ul>
+    <li><a href="https://github.com/jqmc-project/jQMC">jQMC</a></li>
+    <li><a href="https://github.com/jqmc-project/aiida-jQMC">aiida-jQMC</a></li>
+    <li><a href="https://github.com/jqmc-project/jQMC-benchmark">jQMC-benchmark</a></li>
+    <li><a href="https://github.com/jqmc-project/jQMC-data">jQMC-data</a></li>
+  </ul>
+</div></footer>
