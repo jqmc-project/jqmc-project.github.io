@@ -69,6 +69,19 @@ layout: default
   </div>
 </div></section>
 
+<section id="supercomputers"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Supercomputers</span>
+    <h2>Where jQMC runs</h2>
+    <p class="lead">jQMC has been run on these systems.</p>
+  </div>
+  <ul class="hpc">
+  {%- for m in site.data.supercomputers %}
+    <li><b>{{ m.name }}</b><span>{{ m.operator }}</span><small>{{ m.country }}</small></li>
+  {%- endfor %}
+  </ul>
+</div></section>
+
 <section id="applications"><div class="wrap">
   <div class="sec-head">
     <span class="eyebrow">Possible applications</span>

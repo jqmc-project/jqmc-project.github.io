@@ -1,0 +1,13 @@
+# Supercomputers on which jQMC has been run: name, operating institution, country.
+- name: Fugaku
+  operator: RIKEN Center for Computational Science
+  country: Japan
+- name: Miyabi
+  operator: JCAHPC (University of Tsukuba and The University of Tokyo)
+  country: Japan
+- name: Genkai
+  operator: Research Institute for Information Technology, Kyushu University
+  country: Japan
+- name: Leonardo
+  operator: CINECA
+  country: Italy

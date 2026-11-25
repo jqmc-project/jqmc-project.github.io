@@ -79,6 +79,13 @@ figure.logo img{display:block; width:100%; max-width:100%; height:auto}
 .cap h3::before{content:""; width:12px; height:12px; border-radius:50%; background:var(--red); flex:none}
 .cap p{margin:0; color:var(--muted); font-size:.95rem}
 
+/* supercomputers */
+.hpc{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.hpc li{display:grid; gap:4px; align-content:start; border-top:2px solid var(--ink); padding-top:12px; min-width:0}
+.hpc b{font:700 1.35rem/1.2 var(--f-display)}
+.hpc span{color:var(--muted); font-size:.92rem}
+.hpc small{font:400 .75rem var(--f-mono); letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+
 /* applications */
 .apps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px}
 .app{display:grid; grid-template-rows:auto auto 1fr; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; min-width:0}
@@ -108,6 +115,7 @@ footer ul{display:flex; gap:18px; flex-wrap:wrap; list-style:none; margin:0; pad
   .hero .wrap{grid-template-columns:minmax(0,1fr)}
   .stack{grid-template-columns:minmax(0,1fr)}
   .caps,.apps,.upcoming{grid-template-columns:minmax(0,1fr)}
+  .hpc{grid-template-columns:repeat(2,minmax(0,1fr))}
   .caps{gap:28px}
 }
 @media (max-width:520px){ .hw{grid-template-columns:minmax(0,1fr)} .layer{grid-template-columns:minmax(0,1fr)} .layer .tag{grid-row:auto} .layer p{grid-column:1} section{padding-block:56px} }
